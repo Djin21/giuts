@@ -11,15 +11,13 @@ import Salles from './pages/salles';
 function App() {
 
   return (
-    // <div className="App">
-      
-    // </div>
     <BrowserRouter>
         <Routes>
             <Route path="/" >
                 <Route index element={<Main />} />
                 <Route path="main" element={<Main />} />
                 <Route path="salles" element={<Salles />} />
+                <Route path="login" element={<Login />} />
                 <Route path="*" element={<Main />} />
             </Route>
         </Routes>

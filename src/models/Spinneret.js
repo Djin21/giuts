@@ -3,13 +3,13 @@ export default class Spinneret {
     id;
     name;
     course;
-    spinneret_id;
+    room_id;
 
     constructor () {
         this.id = null;
         this.name = '';
         this.course = '';
-        this.spinneret_id = 0;
+        this.room_id = 0;
     }
 
 }
