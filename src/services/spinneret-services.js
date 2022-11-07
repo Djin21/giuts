@@ -10,4 +10,9 @@ export default class SpinneretServices {
             .then(response => response.json());
     }
 
+    static getSpinneretsByRoom (room_id) {
+        return fetch('http://localhost:3001/spinnerets')
+            .then(response => response.json())
+    }
+
 }

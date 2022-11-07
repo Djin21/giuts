@@ -42,6 +42,7 @@ export default function Main () {
 
     return (
         <div className='container-fluid'>
+          
         <SideBar />
         
         <ReservationForm Filieres={Filieres} roomsList={roomsList} />

@@ -8,7 +8,7 @@ export default function ReservationModal (props) {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">{props.filiere.nom}</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{props.filiere.name}</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -30,19 +30,6 @@ export default function ReservationModal (props) {
                                 <p className='py-1 px-2 m-0 badge-value'>Reservee</p>
                             </div>
                             <hr className='col-8 modal-line mx-auto' />
-                                {/* <p className='fs-5 fw-bold text-gray p-0 mb-3'>Filiere</p> */}
-                            {/* <div className='w-100 d-flex justify-content-start align-items-end'>
-                            </div> */}
-                            <div className='w-100 px-2 py-3 d-flex justify-content-between align-items-center mb-2 badge-filiere'>
-                                <p className='p-0 m-0 fw-bold text-gray-f'>GIN3</p>
-                                <p className='p-0 m-0'>12/12/1222</p>
-                                <p className='p-0 m-0'>31/12/1222</p>
-                                <p className='p-0 m-0'>12h30 - 99h43</p>
-                            </div>
-                            <div className='w-100 px-2 py-3 d-flex justify-content-between align-items-center mb-2 badge-filiere'>
-                                <p className='p-0 m-0'>GIN3</p>
-                                <p className='p-0 m-0'>12/12/1222 - 31/12/1222</p>
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">

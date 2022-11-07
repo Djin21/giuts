@@ -2,29 +2,37 @@ import '../css/style.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import ReservationModal from './reservation-modal';
+import { useEffect, useState } from 'react';
+import SpinneretServices from '../services/spinneret-services';
 
 export default function SalleModal (props) {
 
-    const filieres = [
-        {id: 1, nom: 'GIN 3'},
-        {id: 2, nom: 'IAB 3'}
-    ]
+    // const filieres = [
+    //     {id: 1, nom: 'GIN 3'},
+    //     {id: 2, nom: 'IAB 3'}
+    // ]
+
+    const [spinnerets, setSpinnerets] = useState()
 
     const reservations = [
         {id: 1, filiere_id: 1, salle_id: 1, dateDeb: '12/12/1221', dateFin: '13/14/1421', plageHoraire: '12h43 - 14h31'},
         {id: 1, filiere_id: 2, salle_id: 1, dateDeb: '12/12/1221', dateFin: '13/14/1421', plageHoraire: '12h43 - 14h31'}
     ]
 
+    useEffect (() => {
+        SpinneretServices.getSpinneretsByRoom(props.salle.id).then(data => setSpinnerets(data))
+    }, [])
+
     return (
         <>
-        <div class="modal fade" id={`salleModal${props.salle.id}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">{props.salle.nom}</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id={`salleModal${props.salle.id}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">{props.salle.name}</h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
                         <div className='w-100 d-flex flex-column justify-content-start align-items-start'>
                             <div className='w-100 d-flex justify-content-between align-items-center mb-3'>
                                 <p className='p-0 m-0'>Contenance :</p>
@@ -50,17 +58,18 @@ export default function SalleModal (props) {
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
         </div>
         {
-            filieres.map(filiere => (
+            spinnerets.map(filiere => (
                 <ReservationModal filiere = {filiere} />
             ))
-        }</>
+        }
+        </>
     );
 }

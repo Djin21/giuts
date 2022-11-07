@@ -10,4 +10,9 @@ export default class ReservationServices {
     //     })
     // }
 
+    static getReservations () {
+        return fetch('http://localhost:3001/reservations')
+            .then(response => response.json())
+    }
+
 }
