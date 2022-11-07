@@ -1,0 +1,184 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar-icon {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.buttonn {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.151);
+}
+
+.rect {
+    background-color: rgb(167, 157, 219);
+    height: 50px;
+    width: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.26);
+}
+
+.page-title {
+    margin-left: 6rem;
+}
+
+.row-type {
+    padding-left: 6rem;
+}
+
+#searchBar {
+    border-bottom-left-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    background-color: rgb(247, 247, 247)!important;
+}
+
+#searchInput:focus {
+    border-color: grey!important;
+}
+
+#floatingInput {
+    background-color: transparent;
+}
+
+#floatingInput:focus {
+    border: none!important;
+}
+
+.list-carte-salle{
+    flex-wrap: wrap;
+}
+
+.salle-card {
+    position: relative;
+    margin-bottom: 180px;
+    transition: 0.5s;
+}
+
+.circle {
+    z-index: 10;
+    height: 80px;
+    width: 220px;
+    /* background-color: rgb(200, 192, 248); */
+    background-color: rgb(167, 157, 219);
+}
+/* 
+.circle-inscrit{
+    z-index: 10;
+    margin: 0px auto;
+    align-items: center;
+    height: 40px;
+    width: 110px;
+    background-color: rgb(243, 69, 176);
+} */
+
+.salle-card-title {
+    font-size: 1.03rem;
+    font-weight: 500;
+    /* color: rgb(76, 82, 90); */
+
+}
+
+.salle-card-contenu {
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    
+    /* background-color: rgb(255, 255, 255); */
+    /* rgb(167, 157, 219) */
+    height: auto;
+    width: 200px;
+    padding: 3.4rem 1rem 2.5rem 1rem;
+}
+
+.salle-card-date {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.salle-card-filiere {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.line {
+    height: 1px;
+    width: 75%;
+    background-color: black;
+}
+
+.salle-card-item {
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+.salle-card-item:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.salle-card-hide {
+    opacity: 0;
+    transform: translateX(-25px);
+}
+
+/* Modal */
+
+.modal-header {
+    background-color: rgb(200, 192, 248);
+}
+
+.modal-line {
+    height: 2px;
+    color: gray;
+    background-color: gray;
+}
+
+.badge-value {
+    background-color: rgb(200, 192, 248);
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.badge-filiere {
+    background-color: rgb(227, 226, 229);
+    color: black;
+    border-radius: 0.3rem;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.badge-filiere:hover {
+    background-color: rgb(200, 192, 248);
+    transform: scale(1.02);
+}
+
+/* Colors */
+
+.text-gray {
+    color: rgb(151, 160, 173);
+}
+
+.text-gray-f {
+    color: rgb(76, 82, 90);
+}
+
+.btn-primaire {
+    color: white;
+    background-color: rgb(200, 192, 248);
+}
+
+.bg-primaire {
+    background-color: rgb(200, 192, 248);
+}
