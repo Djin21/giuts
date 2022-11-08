@@ -132,7 +132,7 @@ export default function Salles () {
                 </div>
             </div>
             <div className="container-fluid main-container">
-                <h3 className='text-start page-title ms-0 mt-5'>Gestion des salles</h3>deleteRoom()
+                <h3 className='text-start page-title ms-0 mt-5'>Gestion des salles</h3>
                 <div className="left-section pe-5 mt-3">
                     <div className='row pt-3 mb-3 d-flex flex-row justify-content-start align-items-center'>
                         <ul className='d-flex flex-row justify-content-start align-items-center w-auto m-0'>

@@ -194,17 +194,20 @@
     {
       "id": 1,
       "name": "GLO 3",
-      "description": "Genie Logiciel 3"
+      "description": "Genie Logiciel 3",
+      "room_id": 2
     },
     {
       "id": 2,
       "name": "RSI 3",
-      "description": "Reseau et Securite Informatique 3"
+      "description": "Reseau et Securite Informatique 3",
+      "room_id": 4
     },
     {
       "id": 3,
       "name": "RT 3",
-      "description": "Reseau et Telecommunication 3"
+      "description": "Reseau et Telecommunication 3",
+      "room_id": 1
     }
   ],
   "reservations": [

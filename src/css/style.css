@@ -58,8 +58,19 @@
 
 .salle-card {
     position: relative;
-    margin-bottom: 180px;
     transition: 0.5s;
+}
+
+.pb-1 {
+    margin-bottom: 150px;
+}
+
+.pb-2 {
+    margin-bottom: 14rem;
+}
+
+.pb-3 {
+    margin-bottom: 16rem;
 }
 
 .circle {
@@ -100,7 +111,7 @@
     /* rgb(167, 157, 219) */
     height: auto;
     width: 200px;
-    padding: 3.4rem 1rem 2.5rem 1rem;
+    padding: 3.4rem 1rem 1rem 1rem;
 }
 
 .salle-card-date {

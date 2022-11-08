@@ -23,6 +23,9 @@ export default function Main () {
   const [stateListShow, setStateListShow] = useState(1); // 1 = toutes, 2 = libres, 3 = reservees
   const [salleCardClasse, setSalleCardClasse] = useState('')
 
+  const [searchState, setSearchState] = useState(0);
+  const [searchRoomsList, setSearchRoomsList] = useState([]);
+
   const showListe = (id) => {
     if (stateListShow !== id) {
       setSalleCardClasse('salle-card-hide')
@@ -30,6 +33,15 @@ export default function Main () {
         setStateListShow(id)
         setSalleCardClasse('')
       }, 800);
+    }
+  }
+
+  const searchRooms = (term) => {
+    if(term !== null && term !== '') {
+      setSearchState(1)
+      RoomServices.searchRooms(term).then(data => setSearchRoomsList(data));
+    }else{
+      setSearchState(0)
     }
   }
 
@@ -62,36 +74,46 @@ export default function Main () {
               </li>
             </ul>
             <div class="form-floating w-50 ms-auto" id='searchBar'>
-              <input type="text" class="form-control border-0" id="floatingInput" placeholder="name@example.com" />
+              <input type="text" class="form-control border-0" id="floatingInput" placeholder="name@example.com" onChange={(e) => { searchRooms(e.target.value) }} />
               <label for="floatingInput" className='ps-4'>Search</label>
             </div>
           </div>
           <div className='center-list d-flex justify-content-start ps-5 pe-2 mt-2'>
             {
-              stateListShow === 1 ? 
-              <ul className='list-carte-salle d-flex flex-row justify-content-start px-4 m-0'>
+              searchState === 0 ?
+                stateListShow === 1 ? 
+                <ul className='list-carte-salle d-flex flex-row justify-content-start px-4 m-0'>
+                  {
+                    roomsList.map(salle => (
+                      <li key={salle.id} className={`p-0 m-0 salle-card-item ${salleCardClasse}`}>
+                        <SalleCard salle={salle} />
+                      </li>
+                    ))
+                  }
+                </ul>
+                : stateListShow === 2 ? 
+                <ul className='list-carte-salle d-flex flex-row justify-content-start px-4 m-0'>
+                  {
+                    freeRoomsList.map(salle => (
+                      <li key={salle.id} className={`p-0 m-0 salle-card-item ${salleCardClasse}`}>
+                        <SalleCard salle={salle} />
+                      </li>
+                    ))
+                  }
+                </ul>
+                : 
+                <ul className='list-carte-salle d-flex flex-row justify-content-start px-4 m-0'>
+                  {
+                    OcpRoomsList.map(salle => (
+                      <li key={salle.id} className={`p-0 m-0 salle-card-item ${salleCardClasse}`}>
+                        <SalleCard salle={salle} />
+                      </li>
+                    ))
+                  }
+                </ul>
+              : <ul className='list-carte-salle d-flex flex-row justify-content-start px-4 m-0'>
                 {
-                  roomsList.map(salle => (
-                    <li key={salle.id} className={`p-0 m-0 salle-card-item ${salleCardClasse}`}>
-                      <SalleCard salle={salle} />
-                    </li>
-                  ))
-                }
-              </ul>
-              : stateListShow === 2 ? 
-              <ul className='list-carte-salle d-flex flex-row justify-content-start px-4 m-0'>
-                {
-                  freeRoomsList.map(salle => (
-                    <li key={salle.id} className={`p-0 m-0 salle-card-item ${salleCardClasse}`}>
-                      <SalleCard salle={salle} />
-                    </li>
-                  ))
-                }
-              </ul>
-              : 
-              <ul className='list-carte-salle d-flex flex-row justify-content-start px-4 m-0'>
-                {
-                  OcpRoomsList.map(salle => (
+                  searchRoomsList.map(salle => (
                     <li key={salle.id} className={`p-0 m-0 salle-card-item ${salleCardClasse}`}>
                       <SalleCard salle={salle} />
                     </li>

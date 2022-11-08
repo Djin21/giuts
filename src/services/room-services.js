@@ -41,4 +41,9 @@ export default class RoomServices {
         .then(response => response.json())
     }
 
+    static searchRooms (term) {
+        return fetch(`http://localhost:3001/rooms?q=${term}`)
+        .then(response => response.json())
+    }
+
 }
