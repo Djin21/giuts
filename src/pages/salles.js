@@ -16,11 +16,17 @@ export default function Salles () {
     const setRoom = (room) => {
         setStateForm(1)
         setCurrentRoom(room)
+        setRoomName(room.name)
+        setRoomCode(room.code)
+        setRoomContenance(room.contenance)
     }
 
     const changeForm = (id) => {
         setCurrentRoom(null)
         setStateForm(id)
+        setRoomName('')
+        setRoomCode('')
+        setRoomContenance('')
     }
 
     const [roomName, setRoomName] = useState('');
@@ -29,17 +35,16 @@ export default function Salles () {
 
     const addRoom = () => {
         const room = new Room(0, roomCode, roomName, roomContenance, 0)
-        RoomServices.addRooms(room);
-        RoomServices.getRooms().then(data => setRooms(data));
+        RoomServices.addRooms(room).then(data => console.log(data));
         window.location.reload();
     }
     // window.location.reload();
 
     const updateRoom = () => {
-        const room = new Room(currentRoom.id, currentRoom.code, currentRoom.name, currentRoom.contenance, currentRoom.etat)
-        RoomServices.updateRooms(room);
-        RoomServices.getRooms().then(data => setRooms(data));
-        window.location.reload();
+        const room = new Room(currentRoom.id, roomCode, roomName, roomContenance, currentRoom.etat)
+        RoomServices.updateRooms(room).then(data => console.log(data));
+        // RoomServices.getRooms().then(data => setRooms(data));
+        // window.location.reload();
     }
 
     const deleteRoom = () => {
@@ -64,15 +69,15 @@ export default function Salles () {
                 <div className="contenu">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder={currentRoom !== null ? currentRoom.name : "Nom de la salle"} onChange={(e) => {setRoomName(e.target.value)}} />
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value={roomName} onChange={(e) => {setRoomName(e.target.value)}} />
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Code</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder={currentRoom !== null ? currentRoom.code : "#0000"} onChange={(e) => {setRoomCode(e.target.value)}} />
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value={roomCode} onChange={(e) => {setRoomCode(e.target.value)}} />
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Contenance</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder={currentRoom !== null ? currentRoom.contenance : "100"} onChange={(e) => {setRoomContenance(e.target.value)}} />
+                        <input type="text" class="form-control" id="exampleFormControlInput1" value={roomContenance} onChange={(e) => {setRoomContenance(e.target.value)}} />
                     </div>
                     <button className="btn btn-primaire w-100 mt-3" data-bs-toggle="modal" data-bs-target={`${stateForm === 0 ? '#saveModal' : '#updateModal'}`}>Enregistrer</button>
                     { stateForm === 0 ? '' : (

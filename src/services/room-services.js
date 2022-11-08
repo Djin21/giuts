@@ -18,7 +18,12 @@ export default class RoomServices {
     static addRooms (room) {
         return fetch("http://localhost:3001/rooms", {
             method: 'POST',
-            body: JSON.stringify(room),
+            body: JSON.stringify({
+                code : room.code,
+                name : room.name,
+                contenance : room.contenance,
+                etat: 0
+            }),
             headers: {'Content-Type': 'application/json'}
         })
         .then(response => response.json())
@@ -27,7 +32,12 @@ export default class RoomServices {
     static updateRooms (room) {
         return fetch(`http://localhost:3001/rooms/${room.id}`, {
             method: 'PUT',
-            body: JSON.stringify(room),
+            body: JSON.stringify({
+                code : room.code,
+                name : room.name,
+                contenance : room.contenance,
+                etat: room.etat
+            }),
             headers: {'Content-Type': 'application/json'}
         })
         .then(response => response.json())
