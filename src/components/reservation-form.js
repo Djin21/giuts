@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function ReservationForm (props) {
-    return (
+    
+  const [reservationSalleId, setReservationSalleId] = useState(0)
+  const [reservationFiliereId, setReservationFiliereId] = useState(0)
+  const [reservationDebut, setReservationDebut] = useState(0)
+  const [reservationFin, setReservationFin] = useState(0)
+  const [reservationHeureDeb, setReservationHeureDeb] = useState(0)
+  const [reservationHeureFin, setReservationHeureFin] = useState(0)
+  
+  return (
         <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
           <div className="offcanvas-header bg-primaire">
             <h5 className="offcanvas-title" id="offcanvasExampleLabel">Nouvelle reservation</h5>

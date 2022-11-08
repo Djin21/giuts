@@ -15,4 +15,13 @@ export default class ReservationServices {
             .then(response => response.json())
     }
 
+    static addRooms (room) {
+        return fetch("http://localhost:3001/reservations", {
+            method: 'POST',
+            body: JSON.stringify(room),
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(response => response.json())
+    }
+
 }

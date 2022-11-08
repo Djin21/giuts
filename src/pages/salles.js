@@ -28,7 +28,7 @@ export default function Salles () {
     const [roomContenance, setRoomContenance] = useState(0);
 
     const addRoom = () => {
-        const room = new Room(roomCode, roomName, roomContenance)
+        const room = new Room(0, roomCode, roomName, roomContenance, 0)
         RoomServices.addRooms(room);
         RoomServices.getRooms().then(data => setRooms(data));
         window.location.reload();
@@ -36,7 +36,7 @@ export default function Salles () {
     // window.location.reload();
 
     const updateRoom = () => {
-        const room = new Room(currentRoom.id, roomCode, roomName, roomContenance)
+        const room = new Room(currentRoom.id, currentRoom.code, currentRoom.name, currentRoom.contenance, currentRoom.etat)
         RoomServices.updateRooms(room);
         RoomServices.getRooms().then(data => setRooms(data));
         window.location.reload();
@@ -91,7 +91,7 @@ export default function Salles () {
                             <p className="text-center fs-5">Voulez vous ajouter cette salle ?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primaire" onClick={() => { stateForm === 0 ? addRoom() : updateRoom() }}>Ajouter</button>
+                            <button type="button" class="btn btn-primaire" onClick={() => { addRoom()}}>Ajouter</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ export default function Salles () {
                             <p className="text-center fs-5">Voulez vous modifier cette salle ?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primaire" onClick={() => { stateForm === 0 ? addRoom() : updateRoom() }}>Modifier</button>
+                            <button type="button" class="btn btn-primaire" onClick={() => { updateRoom() }}>Modifier</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
