@@ -1,0 +1,199 @@
+{
+  "rooms": [
+    {
+      "id": 2,
+      "code": 123123,
+      "name": "Laboratoire Informatique (Petite salle)",
+      "contenance": 100,
+      "etat": 1
+    },
+    {
+      "id": 4,
+      "code": 123123,
+      "name": "Amphi tecno",
+      "contenance": 100,
+      "etat": 1
+    },
+    {
+      "id": 5,
+      "code": 123123,
+      "name": "Amphitheatre 1000",
+      "contenance": 100,
+      "etat": 0
+    },
+    {
+      "code": "3456",
+      "name": "Alille",
+      "contenance": "54",
+      "etat": 0,
+      "id": 6
+    },
+    {
+      "code": "314",
+      "name": "Salut",
+      "contenance": "321",
+      "etat": 0,
+      "id": 7
+    },
+    {
+      "name": "Salle 3",
+      "id": 8
+    },
+    {
+      "code": "6723",
+      "name": "Salle 5",
+      "contenance": "100",
+      "etat": 0,
+      "id": 9
+    }
+  ],
+  "spinnerets": [
+    {
+      "id": 1,
+      "name": "GLO 3",
+      "description": "Genie Logiciel 3",
+      "room_id": 2
+    },
+    {
+      "id": 2,
+      "name": "RSI 3",
+      "description": "Reseau et Securite Informatique 3",
+      "room_id": 4
+    },
+    {
+      "id": 3,
+      "name": "RT 3",
+      "description": "Reseau et Telecommunication 3",
+      "room_id": 1
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "start": "12/12/1222",
+      "end": "12/12/1222",
+      "user_id": 1,
+      "spinneret_id": 1,
+      "room_id": 1
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 2
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 3
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 4
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 5
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 6
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 7
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 8
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 9
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 10
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 11
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 12
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 13
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 14
+    },
+    {
+      "start": null,
+      "end": null,
+      "user_id": 0,
+      "spinneret_id": 0,
+      "room_id": 0,
+      "id": 15
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "gjin",
+      "password": "bonjour"
+    }
+  ]
+}

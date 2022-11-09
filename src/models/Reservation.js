@@ -7,13 +7,13 @@ export default class Reservation {
     spinneret_id;
     room_id;
 
-    constructor() {
-        this.id = 0;
-        this.start = null;
-        this.end = null;
-        this.user_id = 0;
-        this.spinneret_id = 0;
-        this.room = 0;
+    constructor(id = 0, start = null, end = null, user_id = 0, spinneret_id = 0, room_id = 0) {
+        this.id = id;
+        this.start = start;
+        this.end = end;
+        this.user_id = user_id;
+        this.spinneret_id = spinneret_id;
+        this.room_id = room_id;
     }
 
 }

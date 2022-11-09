@@ -1,10 +1,13 @@
 import '../css/style.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
+import { useState } from 'react';
 
 export default function ReservationModal (props) {
 
-
+    const [dateDeb, setDateDeb] = useState()
+    const [dateFin, setDateFin] = useState()
+    const [horaire, setHoraire] = useState()
 
     return (
         <div class="modal fade" id={`filiereModal${props.filiere.id}`} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -22,20 +25,19 @@ export default function ReservationModal (props) {
                             </div>
                             <div className='w-100 d-flex justify-content-between align-items-center mb-3'>
                                 <p className='p-0 m-0'>Date debut :</p>
-                                {/* <p className='py-1 px-2 m-0 badge-value'>Reservee</p> */}
-                                <input type="date" class="form-control w-50" id="exampleFormControlInput1" placeholder="" />
+                                <input type="date" class="form-control w-50" id="exampleFormControlInput1" placeholder="" onChange={(e) => setDateDeb(e.target.value)} />
                             </div>
                             <div className='w-100 d-flex justify-content-between align-items-center mb-3'>
                                 <p className='p-0 m-0'>Date Fin :</p>
-                                {/* <p className='py-1 px-2 m-0 badge-value'>Reservee</p> */}
                                 <input type="date" class="form-control w-50" id="exampleFormControlInput1" placeholder="" />
                             </div>
-                            <div className='w-100 d-flex justify-content-between align-items-center mb-3'>
+                            <div className='w-100 d-flex justify-content-betnew Date()ween align-items-center mb-3'>
                                 <p className='p-0 m-0'>Plage horaire :</p>
                                 {/* <p className='py-1 px-2 m-0 badge-value'>Reservee</p> */}
                                 <input type="time" class="form-control w-50" id="exampleFormControlInput1" placeholder="" />
                             </div>
                             <hr className='col-8 modal-line mx-auto' />
+                            <p>{dateDeb}</p>
                         </div>
                     </div>
                     <div class="modal-footer">

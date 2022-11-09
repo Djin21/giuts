@@ -5,9 +5,10 @@ import SideBar from "../components/sidebar";
 import '../css/salles.css';
 import RoomServices from "../services/room-services";
 import Room from "../models/Room";
-import { Link } from "react-router-dom";
 
 export default function Salles () {
+
+    const [reloadState, setReloadState] = useState(0)
 
     const [rooms, setRooms] = useState([]);
     const [stateForm, setStateForm] = useState(0);
@@ -36,13 +37,16 @@ export default function Salles () {
     const addRoom = () => {
         const room = new Room(0, roomCode, roomName, roomContenance, 0)
         RoomServices.addRooms(room).then(data => console.log(data));
-        window.location.reload();
+        // window.location.reload();
+        setReloadState(reloadState + 1)
+        // window.location.reload();
     }
     // window.location.reload();
 
     const updateRoom = () => {
         const room = new Room(currentRoom.id, roomCode, roomName, roomContenance, currentRoom.etat)
         RoomServices.updateRooms(room).then(data => console.log(data));
+        setReloadState(reloadState + 1)
         // RoomServices.getRooms().then(data => setRooms(data));
         // window.location.reload();
     }
@@ -50,14 +54,15 @@ export default function Salles () {
     const deleteRoom = () => {
         RoomServices.deleteRoom(currentRoom);
         setCurrentRoom(null);
-        RoomServices.getRooms().then(data => setRooms(data));
-        window.location.reload();
+        setReloadState(reloadState + 1)
+        // RoomServices.getRooms().then(data => setRooms(data));
+        // window.location.reload();
         
     }
 
     useEffect(() => {
         RoomServices.getRooms().then(data => setRooms(data));
-    }, [])
+    }, [reloadState])
 
     return (
         <div className="container-fluid">
@@ -96,7 +101,7 @@ export default function Salles () {
                             <p className="text-center fs-5">Voulez vous ajouter cette salle ?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primaire" onClick={() => { addRoom()}}>Ajouter</button>
+                            <button type="button" class="btn btn-primaire" data-bs-dismiss="modal" onClick={() => { addRoom()}}>Ajouter</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -113,7 +118,7 @@ export default function Salles () {
                             <p className="text-center fs-5">Voulez vous modifier cette salle ?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primaire" onClick={() => { updateRoom() }}>Modifier</button>
+                            <button type="button" class="btn btn-primaire" data-bs-dismiss="modal" onClick={() => { updateRoom() }}>Modifier</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -130,7 +135,7 @@ export default function Salles () {
                             <p className="text-center fs-5">Voulez vous supprimer cette salle ?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primaire" onClick={ () => {deleteRoom()} }>Supprimer</button>
+                            <button type="button" class="btn btn-primaire" data-bs-dismiss="modal" onClick={ () => {deleteRoom()} }>Supprimer</button>
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -172,5 +177,5 @@ export default function Salles () {
                 </div>
             </div>
         </div>
-    )
+    );
 }

@@ -8,11 +8,11 @@
       "etat": 1
     },
     {
-      "id": 4,
       "code": 123123,
       "name": "Amphi tecno",
-      "contenance": 100,
-      "etat": 1
+      "contenance": "10",
+      "etat": 1,
+      "id": 4
     },
     {
       "id": 5,
@@ -23,7 +23,7 @@
     },
     {
       "code": "3456",
-      "name": "Alll",
+      "name": "Alille",
       "contenance": "54",
       "etat": 0,
       "id": 6
@@ -45,6 +45,34 @@
       "contenance": "100",
       "etat": 0,
       "id": 9
+    },
+    {
+      "code": "3476",
+      "name": "Salle 4",
+      "contenance": "4735",
+      "etat": 0,
+      "id": 10
+    },
+    {
+      "code": "123",
+      "name": "Salle 6",
+      "contenance": "123",
+      "etat": 0,
+      "id": 11
+    },
+    {
+      "code": "234",
+      "name": "Salle 7",
+      "contenance": "423",
+      "etat": 0,
+      "id": 12
+    },
+    {
+      "code": "234",
+      "name": "Salle 11",
+      "contenance": "432",
+      "etat": 0,
+      "id": 13
     }
   ],
   "spinnerets": [
@@ -75,6 +103,29 @@
       "user_id": 1,
       "spinneret_id": 1,
       "room_id": 1
+    },
+    {
+      "start": "12/12/1222",
+      "end": "12/12/1222",
+      "user_id": 1,
+      "spinneret_id": 3,
+      "room_id": 5,
+      "id": 2
+    },
+    {
+      "start": "12/12/1222",
+      "end": "12/12/1222",
+      "user_id": 1,
+      "spinneret_id": 3,
+      "room_id": 5,
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "gjin",
+      "password": "bonjour"
     }
   ]
 }

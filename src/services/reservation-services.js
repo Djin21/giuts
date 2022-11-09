@@ -15,10 +15,16 @@ export default class ReservationServices {
             .then(response => response.json())
     }
 
-    static addRooms (room) {
+    static addReservation (reservation) {
         return fetch("http://localhost:3001/reservations", {
             method: 'POST',
-            body: JSON.stringify(room),
+            body: JSON.stringify({
+                start: reservation.start,
+                end: reservation.end,
+                user_id: reservation.id,
+                spinneret_id: reservation.spinneret_id,
+                room_id: reservation.room_id
+            }),
             headers: {'Content-Type': 'application/json'}
         })
         .then(response => response.json())

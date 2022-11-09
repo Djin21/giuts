@@ -56,8 +56,6 @@ export default function Main () {
         <div className='container-fluid'>
           
         <SideBar />
-        
-        <ReservationForm Filieres={Filieres} roomsList={roomsList} />
 
         <div className='container-center ms-4'>
           <h3 className='text-start page-title mt-5 text-gray-f'>Reservation des salles</h3>
@@ -128,6 +126,8 @@ export default function Main () {
             }
           </div>
         </div>
+
+        <ReservationForm Filieres={Filieres} roomsList={roomsList} />
 
       </div>
     );

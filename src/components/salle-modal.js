@@ -35,15 +35,11 @@ export default function SalleModal (props) {
                             <hr className='col-8 modal-line mx-auto' />
                             {
                                 spinnerets.map(filiere => (
-                                    <div className='w-100 px-2 py-3 d-flex justify-content-between align-items-center mb-2 badge-filiere' data-bs-toggle="modal" data-bs-target={`${props.salle.id ? '#filiereModal' + props.salle.id : '' }`}>
+                                    <div className='w-100 px-2 py-3 d-flex justify-content-between align-items-center mb-2 badge-filiere' data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target={`${'#filiereModal' + filiere.id }`}>
                                         <p className='p-0 m-0 fw-bold text-gray-f'>{ filiere.name }</p>
                                     </div>
                                 ))
                             }
-                            {/* <div className='w-100 px-2 py-3 d-flex justify-content-between align-items-center mb-2 badge-filiere'>
-                                <p className='p-0 m-0'>GIN3</p>
-                                <p className='p-0 m-0'>12/12/1222 - 31/12/1222</p>
-                            </div> */}
                         </div>
                     </div>
                     <div className="modal-footer">
